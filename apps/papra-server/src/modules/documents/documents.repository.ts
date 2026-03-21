@@ -1,7 +1,7 @@
 import type { Database } from '../app/database/database.types';
 import type { DbInsertableDocument } from './documents.types';
 import { injectArguments, safely } from '@corentinth/chisels';
-import { and, count, desc, eq, getTableColumns, lt, sql } from 'drizzle-orm';
+import { and, count, desc, eq, lt, sql } from 'drizzle-orm';
 import { createIterator } from '../app/database/database.usecases';
 import { createOrganizationNotFoundError } from '../organizations/organizations.errors';
 import { subDays } from '../shared/date';
@@ -9,7 +9,6 @@ import { isUniqueConstraintError } from '../shared/db/constraints.models';
 import { withPagination } from '../shared/db/pagination';
 import { createError } from '../shared/errors/errors';
 import { isDefined, isNil, omitUndefined } from '../shared/utils';
-import { documentsTagsTable, tagsTable } from '../tags/tags.table';
 import { createDocumentAlreadyExistsError, createDocumentNotFoundError } from './documents.errors';
 import { documentsTable } from './documents.table';
 
@@ -137,24 +136,7 @@ async function getDocumentById({ documentId, organizationId, db }: { documentId:
       ),
     );
 
-  if (!document) {
-    return { document: undefined };
-  }
-
-  const tags = await db
-    .select({
-      ...getTableColumns(tagsTable),
-    })
-    .from(documentsTagsTable)
-    .leftJoin(tagsTable, eq(tagsTable.id, documentsTagsTable.tagId))
-    .where(eq(documentsTagsTable.documentId, documentId));
-
-  return {
-    document: {
-      ...document,
-      tags,
-    },
-  };
+  return { document };
 }
 
 async function softDeleteDocument({ documentId, organizationId, userId, db, now = new Date() }: { documentId: string; organizationId: string; userId: string; db: Database; now?: Date }) {
