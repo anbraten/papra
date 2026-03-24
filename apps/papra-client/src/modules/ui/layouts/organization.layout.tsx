@@ -83,7 +83,6 @@ const OrganizationLayoutSideNav: Component = () => {
       icon: 'i-tabler-file-text',
       href: `/organizations/${params.organizationId}/documents`,
     },
-
     {
       label: t('layout.menu.tags'),
       icon: 'i-tabler-tag',
@@ -93,11 +92,6 @@ const OrganizationLayoutSideNav: Component = () => {
       label: t('layout.menu.tagging-rules'),
       icon: 'i-tabler-list-check',
       href: `/organizations/${params.organizationId}/tagging-rules`,
-    },
-    {
-      label: t('layout.menu.members'),
-      icon: 'i-tabler-users',
-      href: `/organizations/${params.organizationId}/members`,
     },
   ];
 

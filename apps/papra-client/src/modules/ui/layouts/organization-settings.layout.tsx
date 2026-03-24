@@ -29,6 +29,11 @@ export const OrganizationSettingsLayout: ParentComponent = (props) => {
       href: `/organizations/${params.organizationId}/settings/webhooks`,
       icon: 'i-tabler-webhook',
     },
+    {
+      label: t('layout.menu.members'),
+      icon: 'i-tabler-users',
+      href: `/organizations/${params.organizationId}/settings/members`,
+    },
   ];
 
   return (

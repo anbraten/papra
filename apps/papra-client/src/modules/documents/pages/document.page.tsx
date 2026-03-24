@@ -88,7 +88,7 @@ const ActivityItem: Component<{ activity: DocumentActivity }> = (props) => {
           <RelativeTime date={props.activity.createdAt} />
           <Show when={props.activity.user}>
             {getUser => (
-              <span>{te('activity.document.user.name', { name: <A href={`/organizations/${params.organizationId}/members`} class="underline hover:text-primary transition">{getUser().name}</A> })}</span>
+              <span>{te('activity.document.user.name', { name: <A href={`/organizations/${params.organizationId}/settings/members`} class="underline hover:text-primary transition">{getUser().name}</A> })}</span>
             )}
           </Show>
         </div>

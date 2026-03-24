@@ -172,7 +172,7 @@ export const MembersPage: Component = () => {
   const { getIsAtLeastAdmin } = useCurrentUserRole({ organizationId: params.organizationId });
 
   return (
-    <div class="p-6 max-w-screen-md mx-auto mt-4">
+    <div class="p-6 mt-10 pb-32 mx-auto max-w-screen-md w-full">
       <div class="border-b mb-6 pb-4 flex justify-between items-center">
         <div>
           <h1 class="text-xl font-bold">
@@ -199,12 +199,12 @@ export const MembersPage: Component = () => {
           )}
         >
           <div class="flex items-center gap-2">
-            <Button as={A} href={`/organizations/${params.organizationId}/invitations`} variant="outline">
+            <Button as={A} href={`/organizations/${params.organizationId}/settings/invitations`} variant="outline">
               <div class="i-tabler-mail size-4 mr-2" />
               {t('organizations.invitations.title')}
             </Button>
 
-            <Button as={A} href={`/organizations/${params.organizationId}/invite`}>
+            <Button as={A} href={`/organizations/${params.organizationId}/settings/invite`}>
               <div class="i-tabler-plus size-4 mr-2" />
               {t('organizations.members.invite-member')}
             </Button>

@@ -173,7 +173,7 @@ const InvitationsList: Component = () => {
           description={t('organizations.invitations.list.empty.description')}
           icon="i-tabler-mail"
           cta={(
-            <Button as={A} href={`/organizations/${params.organizationId}/invite`} variant="outline">
+            <Button as={A} href={`/organizations/${params.organizationId}/settings/invite`} variant="outline">
               <div class="i-tabler-plus size-4 mr-2" />
               {t('organizations.invitations.list.cta')}
             </Button>
@@ -217,16 +217,16 @@ export const InvitationsListPage: Component = () => {
 
   onMount(() => {
     if (!getIsAtLeastAdmin()) {
-      navigate(`/organizations/${params.organizationId}/members`);
+      navigate(`/organizations/${params.organizationId}/settings/members`);
     }
   });
 
   return (
-    <div class="p-6 max-w-screen-md mx-auto mt-4 ">
+    <div class="p-6 mt-10 pb-32 mx-auto max-w-screen-md w-full">
       <div class="border-b mb-6 pb-4">
 
         <div>
-          <Button as={A} href={`/organizations/${params.organizationId}/members`} variant="ghost" class="ml--4 text-muted-foreground">
+          <Button as={A} href={`/organizations/${params.organizationId}/settings/members`} variant="ghost" class="ml--4 text-muted-foreground">
             <div class="i-tabler-arrow-left size-4 mr-2" />
             {t('organizations.members.title')}
           </Button>

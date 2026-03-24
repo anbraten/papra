@@ -21,7 +21,7 @@ export const SettingsLayout: ParentComponent = (props) => {
     {
       label: t('layout.menu.invitations'),
       icon: 'i-tabler-mail',
-      href: '/invitations',
+      href: '/settings/invitations',
     },
   ];
 

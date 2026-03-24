@@ -37,7 +37,7 @@ export const UserSettingsDropdown: Component<{ class?: string }> = (props) => {
           {t('user-menu.api-keys')}
         </DropdownMenuItem>
 
-        <DropdownMenuItem class="flex items-center gap-2 cursor-pointer" as={A} href="/invitations">
+        <DropdownMenuItem class="flex items-center gap-2 cursor-pointer" as={A} href="/settings/invitations">
           <div class="i-tabler-mail-plus size-4 text-muted-foreground" />
           {t('user-menu.invitations')}
           <Show when={getPendingInvitationsCount() > 0}>

@@ -155,19 +155,6 @@ export const routes: RouteDefinition[] = [
                     path: '/tagging-rules/:taggingRuleId',
                     component: UpdateTaggingRulePage,
                   },
-                  {
-                    path: '/members',
-                    component: MembersPage,
-                  },
-                  {
-                    path: '/invite',
-                    component: InviteMemberPage,
-                  },
-                  {
-                    path: '/invitations',
-                    component: InvitationsListPage,
-                  },
-
                 ],
               },
               {
@@ -203,6 +190,18 @@ export const routes: RouteDefinition[] = [
               {
                 path: '/webhooks',
                 component: WebhooksPage,
+              },
+              {
+                path: '/members',
+                component: MembersPage,
+              },
+              {
+                path: '/invite',
+                component: InviteMemberPage,
+              },
+              {
+                path: '/invitations',
+                component: InvitationsListPage,
               },
             ],
           },

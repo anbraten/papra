@@ -59,7 +59,7 @@ export const InviteMemberPage: Component = () => {
         description: t('organizations.invite-member.success.description'),
         type: 'success',
       });
-      navigate(`/organizations/${params.organizationId}/members`);
+      navigate(`/organizations/${params.organizationId}/settings/members`);
     },
     onError: (error) => {
       createToast({
@@ -89,7 +89,7 @@ export const InviteMemberPage: Component = () => {
   });
 
   return (
-    <div class="p-6 max-w-screen-md mx-auto mt-4">
+    <div class="p-6 mt-10 pb-32 mx-auto max-w-screen-md w-full">
       <div class="border-b mb-6 pb-4">
         <h1 class="text-xl font-bold">
           {t('organizations.invite-member.title')}
